@@ -19,8 +19,8 @@
             <p:slider range="min" for="xInput" display="outputX" maxValue="4" minValue="-4"/>
             <br/>
             <p:outputLabel for="@next" value="Y∈[-3, 3]: "/>
-            <h:inputText id="yInput" value="#{point.y}" converterMessage="Y должен быть числом"
-                         validatorMessage="Не выполняется Y∈[-3, 3]" onchange="replaceDotOnComma()">
+            <h:inputText id="yInput" styleClass="someSold_areaForm_inputY" value="#{point.y}" converterMessage="Y должен быть числом"
+                         validatorMessage="Не выполняется Y∈[-3, 3]">
                 <f:convertNumber type="number"/>
                 <f:validateDoubleRange maximum="3" minimum="-3"/>
             </h:inputText>
@@ -35,6 +35,7 @@
 
         </fieldset>
         <h:commandButton actionListener="#{point.addResult(resultList)}" value="Проверить">
+            <f:ajax execute="areaForm" render="resultTable"/>
         </h:commandButton> </h:form>
 </f:view>
 </html>

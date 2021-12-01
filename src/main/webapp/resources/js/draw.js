@@ -1,6 +1,4 @@
-window.onload = () =>{
-    setTimeout(draw, 50);
-};
+window.onload = setTimeout(draw, 50);
 
 function draw() {
     const canvas = document.getElementById("areaCanvas");
@@ -144,9 +142,9 @@ function drawAllPoint(w, h, ctx) {
         let [x, y, r, answ] = str.cells;
         drawPoint({
             w, h, ctx,
-            x: parseInt(x.innerText),
+            x: parseFloat(x.innerText),
             y: parseFloat(y.innerText),
-            r: parseInt(r.innerText),
+            r: parseFloat(r.innerText),
             color: "true" === answ.innerText ? "rgba(0, 255, 0, 0.6)" : "rgba(255, 0, 0, 0.6)",
         });
     }

@@ -30,7 +30,7 @@ import java.util.List;
 public class ResultList implements Serializable { // according to the specification, it does not require Serializable
     @ManagedProperty(value = "#{dataBase}")
     private DataBaseManager dataBaseManager;
-
+    private Point canvasPoint = new Point();
     private List<Point> results = new ArrayList<>();
 
     @PostConstruct
@@ -45,6 +45,8 @@ public class ResultList implements Serializable { // according to the specificat
             e.printStackTrace();
         }
         results.add(point);
+        if (point == canvasPoint)
+            canvasPoint = new Point();
     }
 
     @PreDestroy

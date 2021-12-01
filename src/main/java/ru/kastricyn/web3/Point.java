@@ -32,7 +32,7 @@ public class Point {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name = "sessionId", nullable = false)
-    private String sessionId;
+    private String sessionId = FacesContext.getCurrentInstance().getExternalContext().getSessionId(false);;
     @Column(name = "x", nullable = false)
     private double x;
     @Column(name = "y", nullable = false)
@@ -43,7 +43,7 @@ public class Point {
     private boolean entered;
 
     public boolean check() {
-        return (x >= 0 && x <= r) && (2 * y <= r && x / r + y / (x * r) <= 1) ||
+        return (x >= 0 && x <= r) && (2 * y <= r && x / r + y / (-r /2) <= 1) ||
                 (x <= 0 && y <= 0) && x * x + y * y <= r*r / 4;
     }
 
@@ -53,9 +53,5 @@ public class Point {
         return entered;
     }
 
-    @PostConstruct
-    public void init() {
-        sessionId = FacesContext.getCurrentInstance().getExternalContext().getSessionId(false);
-    }
 }
 
