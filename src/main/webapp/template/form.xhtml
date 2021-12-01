@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form id="areaForm">
+        <fieldset>
+            <legend>Параметры запроса</legend>
+
+            <p:outputLabel for="@next" value="X: "/>
+            <h:inputHidden id="xInput" value="#{point.x}">
+                <f:convertNumber type="number"/>
+                <f:validateDoubleRange maximum="4" minimum="-4"/>
+            </h:inputHidden>
+            <h:outputText id="outputX" value="${point.x}"/>
+            <p:slider range="min" for="xInput" display="outputX" maxValue="4" minValue="-4"/>
+            <br/>
+            <p:outputLabel for="@next" value="Y∈[-3, 3]: "/>
+            <h:inputText id="yInput" value="#{point.y}" converterMessage="Y должен быть числом"
+                         validatorMessage="Не выполняется Y∈[-3, 3]" onchange="replaceDotOnComma()">
+                <f:convertNumber type="number"/>
+                <f:validateDoubleRange maximum="3" minimum="-3"/>
+            </h:inputText>
+            <br/>
+            <p:outputLabel for="@next" value="R∈[1, 3]: "/>
+            <p:spinner id="rInput" min="1" max="3" stepFactor="0.5" value="#{point.r}"
+                       converterMessage="R должен быть числом"
+                       validatorMessage="Не выполняется R∈[1, 3]" onchange="draw()">
+                <f:convertNumber type="number"/>
+                <f:validateDoubleRange minimum="1" maximum="3"/>
+            </p:spinner>
+
+        </fieldset>
+        <h:commandButton actionListener="#{point.addResult(resultList)}" value="Проверить">
+        </h:commandButton> </h:form>
+</f:view>
+</html>

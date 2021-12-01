@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+
+>
+<f:view>
+    <h:dataTable id="resultTable" var="result" value="${resultList.results}">
+
+        <h:column>
+            <f:facet name="header">X</f:facet>
+            <h:outputText value="${result.x}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Y</f:facet>
+            <h:outputText value="${result.y}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">R</f:facet>
+            <h:outputText value="${result.r}"/>
+        </h:column>
+        <h:column >
+            <f:facet name="header">isEntered</f:facet>
+            <h:outputText value="${result.entered}"/>
+        </h:column>
+    </h:dataTable>
+</f:view>
+</html>

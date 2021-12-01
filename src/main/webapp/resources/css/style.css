@@ -1,0 +1,124 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+div#header {
+    border-bottom: 1px solid rebeccapurple;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+div#header address {
+    position: absolute;
+    right: 10px;
+}
+
+div#header .variant {
+    text-align: center;
+}
+
+div#header span#clock {
+    position: absolute;
+    left: 10px;
+}
+
+div#main {
+    margin: auto;
+}
+
+div#main > * {
+    float: left;
+    margin: 25px;
+}
+
+div#main form#hiddenForm{
+    display: none;
+}
+
+div#main form {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 1em;
+}
+
+div#main form fieldset {
+    margin: 10px;
+    border-radius: 1em;
+}
+
+div#main figure * {
+    margin: auto;
+    text-align: center;
+}
+
+div#main table {
+    border: white solid 3px;
+    border-collapse: collapse;
+    width: calc(50% - 150px);
+    float: right;
+}
+
+div#main form button[name='x'].green {
+    background: #a1ff87;
+}
+
+td, th {
+    padding: 10px;
+    text-align: center;
+    border: solid 1px white;
+}
+
+/*p.required {*/
+/*    border: #ff8787 solid 2px;*/
+/*    width: 100%;*/
+/*}*/
+
+p.required::after {
+    content: "Элемент является обязательным для выбора";
+    color: red;
+    display: block;
+}
+
+td.red {
+    background-color: #ff8787;
+    color: black;
+}
+
+p.green {
+    border: solid 2px #a1ff87;
+}
+
+td.green {
+    background-color: #a1ff87;
+    color: black;
+}
+
+td.yellow {
+    background-color: #fffb8b;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: aquamarine;
+}
+
+a:hover {
+    color: aqua;
+}
+
+div.messages {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+div.messages ul li {
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 135, 135, 0.67);
+}

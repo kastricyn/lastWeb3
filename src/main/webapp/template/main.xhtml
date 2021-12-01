@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+    <title>Кастрицын - лаб3</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body>
+    <div id="header">
+        <ui:insert name="header">
+            <h:outputText id="clock" value="#{params.dateTime.format(params.formatter)}"/> <p:poll interval="6"
+                                                                                                   update="clock"/>
+            <address>
+                Выполнил: Кастрицын Максим Игоревич
+            </address>
+            <p class="variant">
+                Вариант №8809
+            </p>
+        </ui:insert>
+    </div>
+    <div id="main">
+        <ui:insert name="main"/>
+    </div>
+    <div id="footer">
+        <ui:insert name="footer"/>
+    </div>
+    <ui:insert name="script"/>
+</h:body>
+</html>

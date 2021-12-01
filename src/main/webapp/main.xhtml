@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+<f:view>
+    <ui:decorate template="template/main.xhtml">
+        <ui:define name="script">
+            <h:outputScript library="js" name="checker.js"/>
+            <h:outputScript library="js" name="draw.js"/>
+            <h:outputScript library="js" name="coordinateTransform.js"/>
+            <h:outputScript library="js" name="ajax.js"/>
+            <h:outputScript library="js" name="submitForm.js"/>
+        </ui:define>
+        <ui:define name="main">
+            <div>
+                <p>
+                    <canvas id="areaCanvas" width="340" height="340">
+                    </canvas>
+                </p>
+                <span>Область, в которую определяется попадание</span>
+            </div>
+            <ui:include src="template/form.xhtml"/>
+            <ui:include src="template/hiddenForm.xhtml"/>
+            <ui:include src="template/resultTable.xhtml"/>
+        </ui:define>
+        <ui:define name="footer">
+            <h:form>
+                <h:commandLink action="success">
+                    Пойдём обратно?
+                </h:commandLink>
+            </h:form>
+            <div class="messages">
+                <h:messages/>
+            </div>
+        </ui:define>
+    </ui:decorate>
+</f:view>
+
+</html>
