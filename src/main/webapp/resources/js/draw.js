@@ -1,4 +1,5 @@
 window.onload = setTimeout(draw, 50);
+setInterval(draw, 250);
 
 function draw() {
     const canvas = document.getElementById("areaCanvas");
@@ -115,7 +116,7 @@ function drawArea(ctx, w, h, r) {
 
     let {left: rPixel} = corTransform.getTopLeftInNormalAxes(r, r / 2)
 
-    console.log(rPixel, rPixel / 2);
+    // console.log(rPixel, rPixel / 2);
     ctx.fillRect(0, 0, rPixel, rPixel / 2);
     //исуем треугольник
     ctx.beginPath();

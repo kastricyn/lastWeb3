@@ -61,4 +61,10 @@ public class ResultList implements Serializable { // according to the specificat
         }
         results.clear();
     }
+
+    public List<Point> getResults() {
+        if (results.size() > 0)
+            results = dataBaseManager.loadEntries(results.get(0).getSessionId());
+        return results;
+    }
 }
